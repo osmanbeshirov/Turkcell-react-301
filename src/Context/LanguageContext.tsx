@@ -1,4 +1,4 @@
-import { createContext, useState } from 'react';
+import { createContext, useContext, useState } from 'react';
 
 const LanguageContext = createContext<any>('');
 
@@ -27,5 +27,14 @@ export const LanguageContextProvide: React.FC<Props> = ({ children }) => {
     return <LanguageContext.Provider value={values}>{children}</LanguageContext.Provider>
 }
 
+export const useLang = () => {
+    const context = useContext(LanguageContext);
+
+    if (context === undefined) {
+        throw new Error("useLang must be with in a LanguageProvider");
+    }
+
+    return context;
+}
 
 export default LanguageContext;

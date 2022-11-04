@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import LanguageContext from '../Context/LanguageContext'
+import React from 'react'
+import { useLang } from '../Context/LanguageContext'
 
 const ChangeLang = () => {
-    const { lang, changeLang } = useContext(LanguageContext)
+    const { lang, changeLang } = useLang();
     return (
         <div>Active Lang: {lang}
 

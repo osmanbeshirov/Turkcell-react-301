@@ -1,8 +1,8 @@
-import React, { useContext } from 'react'
-import ThemaContext from '../Context/ThemeContext'
+import React from 'react'
+import { useTheme } from '../Context/ThemeContext'
 
 const ChangeThema = () => {
-    const { theme, toggleTheme } = useContext(ThemaContext);
+    const { theme, toggleTheme } = useTheme();
 
     console.log()
     return (

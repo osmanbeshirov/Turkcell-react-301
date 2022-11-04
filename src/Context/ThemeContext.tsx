@@ -1,4 +1,4 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { createContext, useState, useEffect, useContext } from 'react';
 
 
 interface Props {
@@ -31,6 +31,16 @@ export const ThemeContextProvider: React.FC<Props> = ({ children }) => {
 
 
   return <ThemeContext.Provider value={values} >{children}</ThemeContext.Provider>
+}
+
+export const useTheme = () => {
+  const context = useContext(ThemeContext);
+
+  if (context === undefined) {
+    throw new Error("useTheme must be with in a ThemeProvider");
+  }
+
+  return context;
 }
 
 export default ThemeContext;
