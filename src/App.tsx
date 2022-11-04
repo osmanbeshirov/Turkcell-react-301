@@ -3,6 +3,7 @@ import logo from './logo.svg';
 
 import { ThemeContextProvider } from './Context/ThemeContext';
 import ChangeThema from './Components/ChangeThema';
+import Footer from './Components/Footer';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
       <ThemeContextProvider>
         <ChangeThema />
+        <Footer/>
       </ThemeContextProvider>
 
     </div>

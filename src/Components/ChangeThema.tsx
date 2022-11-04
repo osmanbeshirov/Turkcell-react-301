@@ -2,12 +2,13 @@ import React, { useContext } from 'react'
 import ThemaContext from '../Context/ThemeContext'
 
 const ChangeThema = () => {
-    const  data  = useContext(ThemaContext);
+    const { theme, toggleTheme } = useContext(ThemaContext);
 
-    console.log(data)
+    console.log()
     return (
         <div>
-            <button>Change Thema</button>
+            Active theme: {theme}
+            <button onClick={() => toggleTheme()}>Change Thema</button>
         </div>
     )
 }
