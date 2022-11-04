@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState, useEffect } from 'react';
 
 
 interface Props {
@@ -8,9 +8,17 @@ interface Props {
 const ThemeContext = createContext<any>(0);
 
 
+const defaultTheme = localStorage.getItem('theme') || 'light';
+
+
 export const ThemeContextProvider: React.FC<Props> = ({ children }) => {
 
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState(defaultTheme);
+
+  useEffect(() => {
+    localStorage.setItem('theme', theme)
+  }, [theme])
+
 
   const toggleTheme = () => {
     setTheme(prev => (prev === 'light' ? 'dark' : 'light'))

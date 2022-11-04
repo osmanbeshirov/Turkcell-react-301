@@ -1,27 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
+import '../src/styles.css'
+import Container from './Container';
 
-import { ThemeContextProvider } from './Context/ThemeContext';
-import ChangeThema from './Components/ChangeThema';
-import Footer from './Components/Footer';
 import { LanguageContextProvide } from './Context/LanguageContext';
-import ChangeLang from './Components/ChangeLang';
+import ThemeContext, { ThemeContextProvider } from './Context/ThemeContext';
+
+
 
 
 function App() {
+
   return (
-    <div className="App">
+    <div>
       <LanguageContextProvide>
         <ThemeContextProvider>
-          <ChangeThema />
-          <hr />
-          <ChangeLang />
-          
-          <Footer />
+          <Container />
         </ThemeContextProvider>
       </LanguageContextProvide>
-
-
     </div>
   );
 }
