@@ -1,6 +1,12 @@
-import React, { createContext } from 'react';
+import React, {  createContext } from 'react';
 
-const ThemaContext = createContext<any>(0)
+const ThemeContext = createContext<any>(0);
+
+export const ThemeContextProvider = ({ children: any }) => {
 
 
-export default ThemaContext;
+  return <ThemeContext.Provider value={'light'} >{children}</ThemeContext.Provider>
+}
+
+
+export default ThemeContext;
